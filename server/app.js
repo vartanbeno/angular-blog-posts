@@ -9,10 +9,33 @@ const url = 'mongodb://localhost/blogDb';
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/api/user/login', (req, res) => {
+// app.post('/api/user/login', (req, res) => {
+//     mongoose.connect(url, err => {
+//         if (err) throw err;
+//         console.log('connection successful, username is ' + req.body.username + ', password is ' + req.body.password);
+//     })
+// })
+
+app.post('/api/user/login', (req, res) => {
     mongoose.connect(url, err => {
         if (err) throw err;
-        console.log('connection successful, username is ' + req.body.username + ', password is ' + req.body.password);
+        User.find({
+            username: req.body.username, password: req.body.password
+        }, (err, user) => {
+            if (err) throw err;
+            if (user.length === 1) {
+                return res.status(200).json({
+                    status: 'success',
+                    data: user
+                })
+            }
+            else {
+                return res.status(200).json({
+                    status: 'fail',
+                    message: 'login failed'
+                })
+            }
+        })
     })
 })
 

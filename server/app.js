@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const User = require('./models/user');
 
 const url = 'mongodb://localhost/blogDb';
 

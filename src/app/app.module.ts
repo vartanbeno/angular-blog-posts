@@ -9,13 +9,15 @@ import { routing } from './app-routing.module';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { ShowPostComponent } from './show-post/show-post.component';
+import { AddPostComponent } from './add-post/add-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    ShowPostComponent
+    ShowPostComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,

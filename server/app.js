@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const User = require('./models/user');
+const Post = require('./models/post');
 
 const url = 'mongodb://localhost/blogDb';
 
@@ -35,6 +36,19 @@ app.post('/api/user/login', (req, res) => {
                     message: 'login failed'
                 })
             }
+        })
+    })
+})
+
+app.post('/api/post/getAllPosts', (req, res) => {
+    mongoose.connect(url, function(err) {
+        if (err) throw err;
+        Post.find({}, [], { sort: { _id: -1 } }, (err, post) => {
+            if (err) throw err;
+            return res.status(200).json({
+                status: 'success',
+                data: post
+            })
         })
     })
 })

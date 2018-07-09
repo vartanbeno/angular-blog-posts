@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // })
 
 app.post('/api/user/login', (req, res) => {
-    mongoose.connect(url, err => {
+    mongoose.connect(url, { useMongoClient: true }, function(err) {
         if (err) throw err;
         User.find({
             username: req.body.username, password: req.body.password

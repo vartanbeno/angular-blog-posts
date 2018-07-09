@@ -24,9 +24,9 @@ export class LoginComponent implements OnInit {
   validateLogin() {
     if (this.user.username && this.user.password) {
       this.loginService.validateLogin(this.user).subscribe(result => {
-        console.log('result is ' + result)
+        console.log('result is ', result)
       }, error => {
-        console.log('error is ' + error);
+        console.log('error is ', error);
       });
     }
     else {

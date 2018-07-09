@@ -8,12 +8,14 @@ import { LoginComponent } from './login/login.component';
 import { routing } from './app-routing.module';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { ShowPostComponent } from './show-post/show-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ShowPostComponent
   ],
   imports: [
     BrowserModule,

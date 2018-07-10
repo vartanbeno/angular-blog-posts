@@ -19,6 +19,9 @@ export class EditPostComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.commonService.postEdit_Observable.subscribe(res => {
+      this.post = this.commonService.post_to_be_edited;
+    })
   }
 
   updatePost() {

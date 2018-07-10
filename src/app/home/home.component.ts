@@ -8,13 +8,7 @@ import { CommonService } from '../common.service';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('addPost') addBtn: ElementRef;
-
-  constructor(private commonService: CommonService) {
-    this.commonService.postEdit_Observable.subscribe(res => {
-      this.addBtn.nativeElement.click();
-    })
-  }
+  constructor() { }
 
   ngOnInit() {
   }

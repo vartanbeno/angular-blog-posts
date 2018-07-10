@@ -25,7 +25,7 @@ export class EditPostComponent implements OnInit {
   }
 
   updatePost() {
-    if (this.post.id && this.post.title && this.post.description) {
+    if (this.post._id && this.post.title && this.post.description) {
       this.editPostService.updatePost(this.post).subscribe(res => {
         this.closeBtn.nativeElement.click();
         this.commonService.notifyPostEdit();

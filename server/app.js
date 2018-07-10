@@ -53,4 +53,20 @@ app.post('/api/post/getAllPosts', (req, res) => {
     })
 })
 
+app.post('/api/post/createPost', (req, res) => {
+    mongoose.connect(url, function(err) {
+        if (err) throw err;
+        const post = new Post({
+            title: req.body.title, description: req.body.description
+        })
+        post.save((err, post) => {
+            if (err) throw err;
+            return res.status(200).json({
+                status: 'success',
+                data: post
+            })
+        })
+    })
+})
+
 app.listen(3000, () => console.log('blog server running on port 3000'));

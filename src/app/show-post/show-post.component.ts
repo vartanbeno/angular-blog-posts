@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShowPostService } from '../show-post.service';
 import { CommonService } from '../common.service';
+import { Post } from '../models/post.model';
 
 @Component({
   selector: 'app-show-post',
@@ -25,6 +26,10 @@ export class ShowPostComponent implements OnInit {
     this.showPostService.getAllPosts().subscribe(result => {
       this.posts = result['data'];
     })
+  }
+
+  editPost(post: Post) {
+    this.commonService.setPostToEdit(post);
   }
 
 }

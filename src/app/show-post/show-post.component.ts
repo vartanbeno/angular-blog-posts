@@ -12,6 +12,7 @@ import { Post } from '../models/post.model';
 export class ShowPostComponent implements OnInit {
 
   public posts: any = [];
+  public post_to_delete;
 
   constructor(private showPostService: ShowPostService, private commonService: CommonService) { }
 
@@ -24,12 +25,17 @@ export class ShowPostComponent implements OnInit {
 
   getAllPosts() {
     this.showPostService.getAllPosts().subscribe(result => {
+      console.log('result is ', result)
       this.posts = result['data'];
     })
   }
 
   editPost(post: Post) {
     this.commonService.setPostToEdit(post);
+  }
+
+  deletePost(post: Post) {
+    this.commonService.setPostToDelete(post);
   }
 
 }

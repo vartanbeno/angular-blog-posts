@@ -26,6 +26,7 @@ export class AddPostComponent implements OnInit {
       this.addPostService.addPost(this.post).subscribe(res => {
         this.closeBtn.nativeElement.click();
         this.commonService.notifyPostAddition();
+        this.post = new Post();
       })
     }
     else {

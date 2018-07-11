@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { CommonService } from '../common.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',

@@ -13,6 +13,7 @@ export class ShowPostComponent implements OnInit {
 
   public posts: any = [];
   public post_to_delete;
+  public selectedPost = -1;
 
   @ViewChild('closeBtn') closeBtn: ElementRef;
 
@@ -49,6 +50,10 @@ export class ShowPostComponent implements OnInit {
       this.closeBtn.nativeElement.click();
       this.getAllPosts();
     })
+  }
+
+  activate(post: any) {
+    post.active = !post.active;
   }
 
 }

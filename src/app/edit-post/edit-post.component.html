@@ -13,12 +13,11 @@
                 <form autocomplete="off">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Title</label>
-                        <input name="title" type="text" [(ngModel)]="post.title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Title">
+                        <input name="title" type="text" [(ngModel)]="edit_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Title">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Description</label>
-                        <textarea name="description" [(ngModel)]="post.description" class="form-control" id="exampleInputPassword1" placeholder="Description">
-                        </textarea>
+                        <textarea name="description" [(ngModel)]="edit_description" class="form-control" id="exampleInputPassword1" placeholder="Description"></textarea>
                     </div>
  
                     <button (click)="updatePost()" type="button" class="btn btn-primary">Update</button>

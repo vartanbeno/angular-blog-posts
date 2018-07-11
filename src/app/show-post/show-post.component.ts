@@ -52,8 +52,4 @@ export class ShowPostComponent implements OnInit {
     })
   }
 
-  activate(post: any) {
-    post.active = !post.active;
-  }
-
 }

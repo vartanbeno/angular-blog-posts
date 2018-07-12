@@ -12,8 +12,7 @@ export class AddPostService {
   addPost(post: Post) {
     return this.http.post('api/post/createPost', {
       title: post.title,
-      description: post.description,
-      datePosted: post.datePosted
+      description: post.description
     })
   }
 

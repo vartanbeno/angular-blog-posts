@@ -30,7 +30,7 @@ export class EditPostComponent implements OnInit {
   }
 
   updatePost() {
-    if (this.post._id && this.edit_title && this.edit_description) {
+    if (this.post._id && this.edit_title && this.edit_description && this.post.datePosted) {
       this.post.title = this.edit_title;
       this.post.description = this.edit_description;
       this.editPostService.updatePost(this.post).subscribe(res => {

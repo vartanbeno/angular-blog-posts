@@ -75,7 +75,7 @@ app.post('/api/post/createPost', (req, res) => {
         const post = new Post({
             title: req.body.title,
             description: req.body.description,
-            datePosted: req.body.datePosted
+            datePosted: new Date()
         })
         post.save((err, post) => {
             if (err) throw err;

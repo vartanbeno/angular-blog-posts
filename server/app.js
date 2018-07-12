@@ -40,6 +40,22 @@ app.post('/api/user/login', (req, res) => {
     })
 })
 
+app.post('/api/user/register', (req, res) => {
+    mongoose.connect(url, function(err) {
+        if (err) throw err;
+        const user = new User({
+            username: req.body.username, password: req.body.password
+        })
+        user.save((err, user) => {
+            if (err) throw err;
+            return res.status(200).json({
+                status: 'success',
+                data: user
+            })
+        })
+    })
+})
+
 app.post('/api/post/getAllPosts', (req, res) => {
     mongoose.connect(url, function(err) {
         if (err) throw err;

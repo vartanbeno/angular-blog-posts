@@ -5,12 +5,12 @@ import { User } from './models/user.model';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class RegisterService {
 
   constructor(private http: HttpClient) { }
 
-  validateLogin(user: User) {
-    return this.http.post('/api/user/login', {
+  register(user: User) {
+    return this.http.post('/api/user/register', {
       username: user.username,
       password: user.password
     })

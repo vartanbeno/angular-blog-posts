@@ -12,6 +12,7 @@ import { ShowPostComponent } from './show-post/show-post.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { CommonService } from './common.service';
 import { EditPostComponent } from './edit-post/edit-post.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EditPostComponent } from './edit-post/edit-post.component';
     HomeComponent,
     ShowPostComponent,
     AddPostComponent,
-    EditPostComponent
+    EditPostComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

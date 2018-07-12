@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 const Post = require('./models/post');
 
-const url = 'mongodb://localhost/blogDb';
+const url = 'mongodb://test:test123@ds235401.mlab.com:35401/angular-blog-db';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

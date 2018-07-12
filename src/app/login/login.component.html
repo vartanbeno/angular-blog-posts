@@ -4,11 +4,6 @@
         <input name="email" [(ngModel)]="user.username" type="test" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input name="password" [(ngModel)]="user.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
-       </div>
     <button class="btn btn-lg btn-primary btn-block" (click)="validateLogin()" type="submit">Sign in</button>
     <button class="btn btn-primary btn-block" [routerLink]="['/register']" type="submit">No account? Sign up</button>
 </form>

@@ -5,4 +5,5 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input name="password" [(ngModel)]="user.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
     <button class="btn btn-lg btn-primary btn-block" (click)="register()" type="submit">Register</button>
+    <button class="btn btn-primary btn-block" [routerLink]="['/']" type="submit">Have an account? Sign in</button>
 </form>

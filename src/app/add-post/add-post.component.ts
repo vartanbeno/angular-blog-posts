@@ -23,6 +23,7 @@ export class AddPostComponent implements OnInit {
 
   addPost() {
     if (this.post.title && this.post.description) {
+      this.post.datePosted = new Date();
       this.addPostService.addPost(this.post).subscribe(res => {
         this.closeBtn.nativeElement.click();
         this.commonService.notifyPostAddition();

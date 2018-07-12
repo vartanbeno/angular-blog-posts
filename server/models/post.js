@@ -10,6 +10,10 @@ const postSchema = new Schema({
     description: {
         type: String,
         required: true
+    },
+    datePosted: {
+        type: Date,
+        required: true
     }
 }, { collection: 'post' })
 

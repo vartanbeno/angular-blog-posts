@@ -73,7 +73,9 @@ app.post('/api/post/createPost', (req, res) => {
     mongoose.connect(url, function(err) {
         if (err) throw err;
         const post = new Post({
-            title: req.body.title, description: req.body.description
+            title: req.body.title,
+            description: req.body.description,
+            datePosted: req.body.datePosted
         })
         post.save((err, post) => {
             if (err) throw err;
